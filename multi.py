@@ -136,16 +136,19 @@ def run(playwright: Playwright, situs: str, userid: str, bet_raw: str, bet_raw2:
         kirim_telegram_log("GAGAL", f"<b>[ERROR]</b>\n{userid}@{situs}\n❌ {str(e)}\n⌚ {wib}")
 
 def main():
-    bets = baca_file("multi.txt").splitlines()
+    bets = baca_file("bet.txt").splitlines()
     with sync_playwright() as playwright:
         for baris in bets:
             if '|' not in baris:
                 continue
+            if baris.strip().startswith("#"):
+                continue  # <-- Lewati baris komentar
             parts = baris.strip().split('|')
             if len(parts) != 4:
                 continue
             situs, userid, bet_raw, bet_raw2 = parts
             run(playwright, situs.strip(), userid.strip(), bet_raw.strip(), bet_raw2.strip())
+
 
 if __name__ == "__main__":
     main()
