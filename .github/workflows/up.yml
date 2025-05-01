@@ -29,12 +29,21 @@ jobs:
         playwright install chromium
 
     - name: Jalankan Script
+      continue-on-error: true
       env:
         userid: ${{ secrets.USERID }}
         pw: ${{ secrets.PW }}
         TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
         TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
       run: python main.py
+
+    - name: Jalankan Multi Script
+      env:
+        userid: ${{ secrets.USERID }}
+        pw: ${{ secrets.PW }}
+        TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+        TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      run: python multi.py
 
     - name: Set WIB time
       id: set_wib_time
