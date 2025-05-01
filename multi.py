@@ -136,7 +136,7 @@ def run(playwright: Playwright, situs: str, userid: str, bet_raw: str, bet_raw2:
         kirim_telegram_log("GAGAL", f"<b>[ERROR]</b>\n{userid}@{situs}\n❌ {str(e)}\n⌚ {wib}")
 
 def main():
-    bets = baca_file("bet.txt").splitlines()
+    bets = baca_file("multi.txt").splitlines()
     with sync_playwright() as playwright:
         for baris in bets:
             if '|' not in baris:
