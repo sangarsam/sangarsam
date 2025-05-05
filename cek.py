@@ -98,7 +98,7 @@ def run(playwright: Playwright) -> int:
 
                     pesan_menang = (
                         f"<b>{userid_site}</b>\n"
-                        f"<b>🏆 Menang</b>\n"
+                        f"<b>🏆 Kusam KANG IN</b>\n"
                         f"🎯 Menang {format_rupiah(nilai_menang)}\n"
                         f"💰 Saldo: {format_rupiah(current_saldo)}\n"
                         f"⌚ {wib()}"
@@ -107,7 +107,7 @@ def run(playwright: Playwright) -> int:
                 else:
                     pesan_kalah = (
                         f"<b>{userid_site}</b>\n"
-                        f"<b>😢 Tidak Menang</b>\n"
+                        f"<b>😢 Tleseb KANG IN</b>\n"
                         f"💰 Saldo: {format_rupiah(current_saldo)}\n"
                         f"⌚ {wib()}"
                     )
