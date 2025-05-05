@@ -49,7 +49,7 @@ def wib():
 
 def run(playwright: Playwright) -> int:
     sites = baca_file_list("site.txt")
-    pw_env = os.getenv("pw")
+    pw_env = os.getenv("pw1")
     ada_error = False
 
     for entry in sites:
